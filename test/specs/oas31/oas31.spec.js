@@ -21,22 +21,6 @@ describe("Schema with OpenAPI 3.1 $ref description/schema overrides", () => {
     path.abs("specs/oas31/oas31.yaml"), parsedSchema
   ));
 
-  // it("should dereference successfully", async () => {
-  //   let parser = new $RefParser();
-  //   const schema = await parser.dereference(path.rel("specs/oas31/oas31.yaml"));
-  //   expect(schema).to.equal(parser.schema);
-  //   expect(schema).to.deep.equal(dereferencedSchema);
-  //   // Reference equality
-  //   expect(schema.properties.name).to.equal(schema.definitions.name);
-  //   expect(schema.definitions.requiredString)
-  //     .to.equal(schema.definitions.name.properties.first)
-  //     .to.equal(schema.definitions.name.properties.last)
-  //     .to.equal(schema.properties.name.properties.first)
-  //     .to.equal(schema.properties.name.properties.last);
-  //   // The "circular" flag should NOT be set
-  //   expect(parser.$refs.circular).to.equal(false);
-  // });
-
   it("should dereference successfully", async () => {
     let parser = new $RefParser();
     const schema = await parser.dereference(path.rel("specs/oas31/oas31.yaml"));

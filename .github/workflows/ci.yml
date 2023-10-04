@@ -10,7 +10,7 @@ jobs:
   linting:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
       - run: npm ci
       - run: npm run lint
@@ -26,13 +26,12 @@ jobs:
           - ubuntu-latest
           - windows-latest
         node:
-          - 16
           - 18
           - 20
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Node ${{ matrix.node }}
         uses: actions/setup-node@v3
@@ -44,7 +43,7 @@ jobs:
         run: |
           echo "::set-output name=dir::$(npm config get cache)"
 
-      - uses: actions/cache@v3.3.1
+      - uses: actions/cache@v3
         id: npm-cache
         with:
           path: ${{ steps.npm-cache-dir.outputs.dir }}
@@ -77,12 +76,10 @@ jobs:
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Node
         uses: actions/setup-node@v3
-        with:
-          node-version: 14
 
       - name: Install dependencies
         run: npm ci

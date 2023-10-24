@@ -14,3 +14,5 @@ rules:
   no-use-before-define: off
   node/no-deprecated-api: off # `url.parse` has been deprecated but `url.URL` isn't a good replacement yet.
   prefer-rest-params: off
+parserOptions:
+  ecmaVersion: 2020

@@ -20,6 +20,16 @@ describe('Schema with invalid pointers', function () {
     }
   });
 
+  it('should throw an error for an invalid reference', async function () {
+    try {
+      await $RefParser.dereference(path.rel('specs/invalid-pointers/invalid-reference.json'));
+      helper.shouldNotGetCalled();
+    } catch (err) {
+      expect(err).to.be.an.instanceOf(InvalidPointerError);
+      expect(err.message).to.contain('Invalid $ref pointer "#components/". Pointers must begin with "#/"');
+    }
+  });
+
   it('should throw a grouped error for an invalid pointer if continueOnError is true', async function () {
     const parser = new $RefParser();
     try {

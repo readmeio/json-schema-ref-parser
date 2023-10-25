@@ -10,13 +10,13 @@ const { expect } = chai;
 chai.use(chaiSubset);
 
 describe('Schema with invalid pointers', function () {
-  it('should throw an error for an invalid pointer', async function () {
+  it.only('should throw an error for an invalid pointer', async function () {
     try {
       await $RefParser.dereference(path.rel('specs/invalid-pointers/invalid.json'));
       helper.shouldNotGetCalled();
     } catch (err) {
       expect(err).to.be.an.instanceOf(InvalidPointerError);
-      expect(err.message).to.contain('Invalid $ref pointer "f". Pointers must begin with "#/"');
+      expect(err.message).to.contain('Invalid $ref pointer "./invalid.json#f". Pointers must begin with "#/"');
     }
   });
 

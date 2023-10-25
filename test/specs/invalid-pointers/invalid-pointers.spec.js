@@ -10,7 +10,7 @@ const { expect } = chai;
 chai.use(chaiSubset);
 
 describe('Schema with invalid pointers', function () {
-  it.only('should throw an error for an invalid pointer', async function () {
+  it('should throw an error for an invalid pointer', async function () {
     try {
       await $RefParser.dereference(path.rel('specs/invalid-pointers/invalid.json'));
       helper.shouldNotGetCalled();

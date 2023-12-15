@@ -16,7 +16,7 @@ describe('Schema with invalid pointers', function () {
       helper.shouldNotGetCalled();
     } catch (err) {
       expect(err).to.be.an.instanceOf(InvalidPointerError);
-      expect(err.message).to.contain('Invalid $ref pointer "f". Pointers must begin with "#/"');
+      expect(err.message).to.contain('Invalid $ref pointer "./invalid.json#f". Pointers must begin with "#/"');
     }
   });
 

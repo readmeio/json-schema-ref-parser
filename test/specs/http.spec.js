@@ -107,7 +107,7 @@ describe('HTTP options', function () {
               '  https://httpbin.org/relative-redirect/4 \n' +
               '  https://httpbin.org/relative-redirect/3 \n' +
               '  https://httpbin.org/relative-redirect/2 \n' +
-              '  https://httpbin.org/relative-redirect/1'
+              '  https://httpbin.org/relative-redirect/1',
           );
         }
       }
@@ -144,7 +144,7 @@ describe('HTTP options', function () {
           expect(err.message).to.equal(
             'Error downloading https://httpbin.org/redirect/1. \n' +
               'Too many redirects: \n' +
-              '  https://httpbin.org/redirect/1'
+              '  https://httpbin.org/redirect/1',
           );
         }
       }

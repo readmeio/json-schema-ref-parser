@@ -44,8 +44,8 @@ describe('Schema with external $refs', function () {
       path.abs('specs/external/definitions/name.yaml'),
       parsedSchema.name,
       path.abs('specs/external/definitions/required-string.yaml'),
-      parsedSchema.requiredString
-    )
+      parsedSchema.requiredString,
+    ),
   );
 
   it(
@@ -59,8 +59,8 @@ describe('Schema with external $refs', function () {
       path.abs('specs/external/definitions/name.yaml'),
       parsedSchema.name,
       path.abs('specs/external/definitions/required-string.yaml'),
-      parsedSchema.requiredString
-    )
+      parsedSchema.requiredString,
+    ),
   );
 
   it(
@@ -74,8 +74,8 @@ describe('Schema with external $refs', function () {
       path.url('specs/external/definitions/name.yaml'),
       parsedSchema.name,
       path.url('specs/external/definitions/required-string.yaml'),
-      parsedSchema.requiredString
-    )
+      parsedSchema.requiredString,
+    ),
   );
 
   it('should dereference successfully', async function () {

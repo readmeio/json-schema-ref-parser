@@ -17,7 +17,7 @@ describe('Schema without any $refs', function () {
 
   it(
     'should resolve successfully',
-    helper.testResolve(path.rel('specs/no-refs/no-refs.yaml'), path.abs('specs/no-refs/no-refs.yaml'), parsedSchema)
+    helper.testResolve(path.rel('specs/no-refs/no-refs.yaml'), path.abs('specs/no-refs/no-refs.yaml'), parsedSchema),
   );
 
   it('should dereference successfully', async function () {

@@ -24,8 +24,8 @@ describe('Schema with multiple external $refs to different parts of a file', fun
       path.abs('specs/external-multiple/external-multiple.yaml'),
       parsedSchema.schema,
       path.abs('specs/external-multiple/definitions.yaml'),
-      parsedSchema.definitions
-    )
+      parsedSchema.definitions,
+    ),
   );
 
   it('should dereference successfully', async function () {

@@ -83,7 +83,7 @@ describe('json-schema-ref-parser package exports', function () {
       'ResolverError',
       'ParserError',
       'UnmatchedParserError',
-      'UnmatchedResolverError'
+      'UnmatchedResolverError',
     );
   });
 });

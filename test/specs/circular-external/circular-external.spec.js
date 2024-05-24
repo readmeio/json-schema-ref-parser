@@ -35,8 +35,8 @@ describe('Schema with circular (recursive) external $refs', function () {
       path.abs('specs/circular-external/definitions/parent.yaml'),
       parsedSchema.parent,
       path.abs('specs/circular-external/definitions/person.yaml'),
-      parsedSchema.person
-    )
+      parsedSchema.person,
+    ),
   );
 
   it('should dereference successfully', async function () {

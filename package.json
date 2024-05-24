@@ -44,30 +44,22 @@
     "node": ">=18"
   },
   "scripts": {
-    "coverage": "npm run coverage:node && npm run coverage:browser",
-    "coverage:browser": "npm run test:browser -- --coverage",
-    "coverage:node": "nyc mocha",
-    "lint": "eslint .",
-    "prettier": "prettier --list-different --write \"./**/**.{js,ts}\"",
-    "test": "npm run test:node && npm run test:typescript && npm run test:browser && npm run lint",
-    "test:browser": "karma start --single-run",
-    "test:node": "mocha",
-    "test:typescript": "tsc --noEmit --strict --lib esnext,dom test/specs/typescript-definition.spec.ts"
+    "lint": "npm run lint:js && npm run prettier",
+    "lint:js": "eslint . --ext .js,.ts --ignore-path .gitignore",
+    "pretest": "npm run lint",
+    "prettier": "prettier --check .",
+    "prettier:write": "prettier --check --write .",
+    "test": "vitest run --coverage"
   },
   "devDependencies": {
     "@jsdevtools/host-environment": "^2.1.2",
-    "@jsdevtools/karma-config": "^3.1.7",
-    "@readme/eslint-config": "^10.6.1",
+    "@readme/eslint-config": "^14.0.0",
     "@types/node": "^20.3.3",
-    "chai": "^4.3.6",
-    "chai-subset": "^1.6.0",
-    "eslint": "^8.44.0",
-    "karma": "^6.3.17",
-    "karma-cli": "^2.0.0",
-    "mocha": "^10.2.0",
-    "nyc": "^15.0.1",
-    "prettier": "^2.8.7",
-    "typescript": "^5.1.6"
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.1.6",
+    "vitest": "^1.6.0"
   },
   "dependencies": {
     "@jsdevtools/ono": "^7.1.3",

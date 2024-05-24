@@ -75,8 +75,8 @@ describe('When executed in the context of root directory', function () {
       path.abs('specs/absolute-root/definitions/name.yaml'),
       parsedSchema.name,
       path.abs('specs/absolute-root/definitions/required-string.yaml'),
-      parsedSchema.requiredString
-    )
+      parsedSchema.requiredString,
+    ),
   );
 
   it(
@@ -90,8 +90,8 @@ describe('When executed in the context of root directory', function () {
       path.url('specs/absolute-root/definitions/name.yaml'),
       parsedSchema.name,
       path.url('specs/absolute-root/definitions/required-string.yaml'),
-      parsedSchema.requiredString
-    )
+      parsedSchema.requiredString,
+    ),
   );
 
   it('should dereference successfully', async function () {

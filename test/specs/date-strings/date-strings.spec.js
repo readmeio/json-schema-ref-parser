@@ -20,7 +20,7 @@ describe('Schema with date strings', function () {
     helper.testResolve(
       path.rel('specs/date-strings/date-strings.yaml'),
       path.abs('specs/date-strings/date-strings.yaml'),
-      parsedSchema.schema
-    )
+      parsedSchema.schema,
+    ),
   );
 });

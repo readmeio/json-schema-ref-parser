@@ -82,8 +82,8 @@ describe('Blank files', function () {
         path.abs('specs/blank/files/blank.png'),
         parsedSchema.binary,
         path.abs('specs/blank/files/blank.foo'),
-        parsedSchema.unknown
-      )
+        parsedSchema.unknown,
+      ),
     );
 
     it('should dereference successfully', async function () {

@@ -75,7 +75,7 @@ describe('Report correct error source and path for', function () {
           },
         ]);
       }
-    }
+    },
   );
 
   skipIfWindows('schema with an invalid pointer', async function () {

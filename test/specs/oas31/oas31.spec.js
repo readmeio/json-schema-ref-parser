@@ -18,7 +18,7 @@ describe('Schema with OpenAPI 3.1 $ref description/schema overrides', function (
 
   it(
     'should resolve successfully',
-    helper.testResolve(path.rel('specs/oas31/oas31.yaml'), path.abs('specs/oas31/oas31.yaml'), parsedSchema)
+    helper.testResolve(path.rel('specs/oas31/oas31.yaml'), path.abs('specs/oas31/oas31.yaml'), parsedSchema),
   );
 
   it('should dereference successfully', async function () {

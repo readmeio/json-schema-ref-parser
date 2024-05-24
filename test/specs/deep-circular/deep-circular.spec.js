@@ -31,8 +31,8 @@ describe('Schema with deeply-nested circular $refs', function () {
       path.abs('specs/deep-circular/definitions/name.yaml'),
       parsedSchema.name,
       path.abs('specs/deep-circular/definitions/required-string.yaml'),
-      parsedSchema.requiredString
-    )
+      parsedSchema.requiredString,
+    ),
   );
 
   it('should dereference successfully', async function () {
@@ -45,7 +45,7 @@ describe('Schema with deeply-nested circular $refs', function () {
     expect(parser.$refs.circular).to.equal(true);
     expect(parser.$refs.circularRefs).to.have.length(1);
     expect(parser.$refs.circularRefs[0]).to.contain(
-      '#/properties/level1/properties/level2/properties/level3/properties/level4/properties/level5/properties/level6/properties/level7/properties/level8/properties/level9/properties/level10/properties/level11/properties/level12/properties/level13/properties/level14/properties/level15/properties/level16/properties/level17/properties/level18/properties/level19/properties/level20/properties/level21/properties/level22/properties/level23/properties/level24/properties/level25/properties/level26/properties/level27/properties/level28/properties/level29/properties/level30'
+      '#/properties/level1/properties/level2/properties/level3/properties/level4/properties/level5/properties/level6/properties/level7/properties/level8/properties/level9/properties/level10/properties/level11/properties/level12/properties/level13/properties/level14/properties/level15/properties/level16/properties/level17/properties/level18/properties/level19/properties/level20/properties/level21/properties/level22/properties/level23/properties/level24/properties/level25/properties/level26/properties/level27/properties/level28/properties/level29/properties/level30',
     );
 
     // Reference equality
@@ -76,14 +76,14 @@ describe('Schema with deeply-nested circular $refs', function () {
           'level13/properties/level14/properties/level15/properties/level16/properties/level17/properties/' +
           'level18/properties/level19/properties/level20/properties/level21/properties/level22/properties/' +
           'level23/properties/level24/properties/level25/properties/level26/properties/level27/properties/' +
-          'level28/properties/level29/properties/level30'
+          'level28/properties/level29/properties/level30',
       );
 
       // $Refs.circular should be true
       expect(parser.$refs.circular).to.equal(true);
       expect(parser.$refs.circularRefs).to.have.length(1);
       expect(parser.$refs.circularRefs[0]).to.contain(
-        '#/properties/level1/properties/level2/properties/level3/properties/level4/properties/level5/properties/level6/properties/level7/properties/level8/properties/level9/properties/level10/properties/level11/properties/level12/properties/level13/properties/level14/properties/level15/properties/level16/properties/level17/properties/level18/properties/level19/properties/level20/properties/level21/properties/level22/properties/level23/properties/level24/properties/level25/properties/level26/properties/level27/properties/level28/properties/level29/properties/level30'
+        '#/properties/level1/properties/level2/properties/level3/properties/level4/properties/level5/properties/level6/properties/level7/properties/level8/properties/level9/properties/level10/properties/level11/properties/level12/properties/level13/properties/level14/properties/level15/properties/level16/properties/level17/properties/level18/properties/level19/properties/level20/properties/level21/properties/level22/properties/level23/properties/level24/properties/level25/properties/level26/properties/level27/properties/level28/properties/level29/properties/level30',
       );
     }
   });

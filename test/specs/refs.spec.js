@@ -166,11 +166,11 @@ describe('$Refs object', function () {
       const $refs = await $RefParser.resolve(path.abs('specs/external/external.yaml'));
       expect($refs.get(path.abs('specs/external/external.yaml'))).to.deep.equal(parsedSchema.schema);
       expect($refs.get(path.abs('specs/external/definitions/definitions.json'))).to.deep.equal(
-        parsedSchema.definitions
+        parsedSchema.definitions,
       );
       expect($refs.get(path.abs('specs/external/definitions/name.yaml'))).to.deep.equal(parsedSchema.name);
       expect($refs.get(path.abs('specs/external/definitions/required-string.yaml'))).to.deep.equal(
-        parsedSchema.requiredString
+        parsedSchema.requiredString,
       );
     });
 

@@ -44,8 +44,8 @@ describe('Schema with two external refs to the same value and internal ref befor
       path.abs('specs/external-from-internal/external-from-internal.yaml'),
       parsedSchema.schema,
       path.abs('specs/external-from-internal/definitions.yaml'),
-      parsedSchema.definitions
-    )
+      parsedSchema.definitions,
+    ),
   );
 
   it(
@@ -55,8 +55,8 @@ describe('Schema with two external refs to the same value and internal ref befor
       path.abs('specs/external-from-internal/external-from-internal.yaml'),
       parsedSchema.schema,
       path.abs('specs/external-from-internal/definitions.yaml'),
-      parsedSchema.definitions
-    )
+      parsedSchema.definitions,
+    ),
   );
 
   it(
@@ -66,8 +66,8 @@ describe('Schema with two external refs to the same value and internal ref befor
       path.url('specs/external-from-internal/external-from-internal.yaml'),
       parsedSchema.schema,
       path.url('specs/external-from-internal/definitions.yaml'),
-      parsedSchema.definitions
-    )
+      parsedSchema.definitions,
+    ),
   );
 
   it('should dereference successfully', async function () {

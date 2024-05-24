@@ -126,7 +126,7 @@ describe('options.resolve', function () {
               },
             },
           },
-        }
+        },
       );
       helper.shouldNotGetCalled();
     } catch (err) {

@@ -19,7 +19,7 @@ describe('Object sources with file paths', function () {
       // This schema object does not contain any external $refs
       helper.cloneDeep(internalRefsParsedSchema),
       // An options object MUST be passed (even if it's empty)
-      {}
+      {},
     );
     expect(schema).to.equal(parser.schema);
     expect(schema).to.deep.equal(internalRefsDereferencedSchema);
@@ -44,7 +44,7 @@ describe('Object sources with file paths', function () {
       // This schema object contains external $refs
       helper.cloneDeep(parsedSchema.schema),
       // An options object MUST be passed (even if it's empty)
-      {}
+      {},
     );
     expect(schema).to.equal(parser.schema);
     expect(schema).to.deep.equal(dereferencedSchema);
@@ -80,7 +80,7 @@ describe('Object sources with file paths', function () {
       // This schema object contains external $refs
       helper.cloneDeep(parsedSchema.schema),
       // An options object MUST be passed (even if it's empty)
-      {}
+      {},
     );
     expect(schema).to.equal(parser.schema);
     expect(schema).to.deep.equal(bundledSchema);

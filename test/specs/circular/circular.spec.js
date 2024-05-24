@@ -27,8 +27,8 @@ describe('Schema with circular (recursive) $refs', function () {
       helper.testResolve(
         path.rel('specs/circular/circular-self.yaml'),
         path.abs('specs/circular/circular-self.yaml'),
-        parsedSchema.self
-      )
+        parsedSchema.self,
+      ),
     );
 
     it('should dereference successfully', async function () {
@@ -127,8 +127,8 @@ describe('Schema with circular (recursive) $refs', function () {
       helper.testResolve(
         path.rel('specs/circular/circular-ancestor.yaml'),
         path.abs('specs/circular/circular-ancestor.yaml'),
-        parsedSchema.ancestor
-      )
+        parsedSchema.ancestor,
+      ),
     );
 
     it('should dereference successfully', async function () {
@@ -234,8 +234,8 @@ describe('Schema with circular (recursive) $refs', function () {
       helper.testResolve(
         path.rel('specs/circular/circular-indirect.yaml'),
         path.abs('specs/circular/circular-indirect.yaml'),
-        parsedSchema.indirect
-      )
+        parsedSchema.indirect,
+      ),
     );
 
     it('should dereference successfully', async function () {
@@ -265,7 +265,7 @@ describe('Schema with circular (recursive) $refs', function () {
       expect(parser.$refs.circular).to.equal(true);
       expect(parser.$refs.circularRefs).to.have.length(1);
       expect(parser.$refs.circularRefs[0]).to.contain(
-        '#/definitions/parent/properties/children/items/properties/parents/items'
+        '#/definitions/parent/properties/children/items/properties/parents/items',
       );
 
       // Reference equality
@@ -303,7 +303,7 @@ describe('Schema with circular (recursive) $refs', function () {
         expect(err).to.be.an.instanceOf(ReferenceError);
         expect(err.message).to.contain('Circular $ref pointer found at ');
         expect(err.message).to.contain(
-          'specs/circular/circular-indirect.yaml#/definitions/child/properties/parents/items'
+          'specs/circular/circular-indirect.yaml#/definitions/child/properties/parents/items',
         );
 
         // $Refs.circular should be true
@@ -345,8 +345,8 @@ describe('Schema with circular (recursive) $refs', function () {
       helper.testResolve(
         path.rel('specs/circular/circular-indirect-ancestor.yaml'),
         path.abs('specs/circular/circular-indirect-ancestor.yaml'),
-        parsedSchema.indirectAncestor
-      )
+        parsedSchema.indirectAncestor,
+      ),
     );
 
     it('should dereference successfully', async function () {
@@ -376,7 +376,7 @@ describe('Schema with circular (recursive) $refs', function () {
       expect(parser.$refs.circular).to.equal(true);
       expect(parser.$refs.circularRefs).to.have.length(1);
       expect(parser.$refs.circularRefs[0]).to.contain(
-        '#/definitions/parent/properties/child/properties/children/items'
+        '#/definitions/parent/properties/child/properties/children/items',
       );
 
       // Reference equality

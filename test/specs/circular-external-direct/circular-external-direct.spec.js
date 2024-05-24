@@ -25,7 +25,7 @@ describe('Schema with direct circular (recursive) external $refs', function () {
   it('should dereference successfully', async function () {
     const parser = new $RefParser();
     const schema = await parser.dereference(
-      path.rel('specs/circular-external-direct/circular-external-direct-root.yaml')
+      path.rel('specs/circular-external-direct/circular-external-direct-root.yaml'),
     );
     expect(schema).to.equal(parser.schema);
     expect(schema).to.deep.equal(dereferencedSchema);

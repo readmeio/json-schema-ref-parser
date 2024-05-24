@@ -28,8 +28,8 @@ describe('Schema with a top-level (root) $ref', function () {
       path.abs('specs/root/definitions/extended.yaml'),
       parsedSchema.extended,
       path.abs('specs/root/definitions/name.yaml'),
-      parsedSchema.name
-    )
+      parsedSchema.name,
+    ),
   );
 
   it('should dereference successfully', async function () {

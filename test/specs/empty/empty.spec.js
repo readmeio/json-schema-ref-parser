@@ -16,7 +16,7 @@ describe('Empty schema', function () {
 
   it(
     'should resolve successfully',
-    helper.testResolve(path.rel('specs/empty/empty.json'), path.abs('specs/empty/empty.json'), {})
+    helper.testResolve(path.rel('specs/empty/empty.json'), path.abs('specs/empty/empty.json'), {}),
   );
 
   it('should dereference successfully', async function () {

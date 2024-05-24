@@ -57,7 +57,7 @@ describe('Schema with missing pointers', function () {
       try {
         await parser.dereference(
           { foo: { $ref: path.abs('specs/missing-pointers/external-from-internal.yaml') } },
-          { continueOnError: true }
+          { continueOnError: true },
         );
         helper.shouldNotGetCalled();
       } catch (err) {

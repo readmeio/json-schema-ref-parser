@@ -28,8 +28,8 @@ describe('Schema with $refs to parts of external files', function () {
       path.abs('specs/external-partial/definitions/name.yaml'),
       parsedSchema.name,
       path.abs('specs/external-partial/definitions/required-string.yaml'),
-      parsedSchema.requiredString
-    )
+      parsedSchema.requiredString,
+    ),
   );
 
   it('should dereference successfully', async function () {

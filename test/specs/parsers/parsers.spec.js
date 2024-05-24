@@ -35,8 +35,8 @@ describe('References to non-JSON files', function () {
       path.abs('specs/parsers/files/unknown.foo'),
       dereferencedSchema.defaultParsers.definitions.unknown,
       path.abs('specs/parsers/files/empty'),
-      dereferencedSchema.defaultParsers.definitions.empty
-    )
+      dereferencedSchema.defaultParsers.definitions.empty,
+    ),
   );
 
   it('should dereference successfully', async function () {

@@ -30,8 +30,8 @@ describe('Schema with circular $refs that extend each other', function () {
         path.abs('specs/circular-extended/circular-extended-self.yaml'),
         parsedSchema.self,
         path.abs('specs/circular-extended/definitions/thing.yaml'),
-        parsedSchema.thing
-      )
+        parsedSchema.thing,
+      ),
     );
 
     it('should dereference successfully', async function () {
@@ -119,8 +119,8 @@ describe('Schema with circular $refs that extend each other', function () {
         path.abs('specs/circular-extended/definitions/pet.yaml'),
         parsedSchema.pet,
         path.abs('specs/circular-extended/definitions/animals.yaml'),
-        parsedSchema.animals
-      )
+        parsedSchema.animals,
+      ),
     );
 
     it('should dereference successfully', async function () {
@@ -166,7 +166,7 @@ describe('Schema with circular $refs that extend each other', function () {
         expect(err).to.be.an.instanceOf(ReferenceError);
         expect(err.message).to.contain('Circular $ref pointer found at ');
         expect(err.message).to.contain(
-          'specs/circular-extended/definitions/person-with-spouse.yaml#/properties/spouse'
+          'specs/circular-extended/definitions/person-with-spouse.yaml#/properties/spouse',
         );
 
         // $Refs.circular should be true
@@ -216,8 +216,8 @@ describe('Schema with circular $refs that extend each other', function () {
         path.abs('specs/circular-extended/definitions/pet.yaml'),
         parsedSchema.pet,
         path.abs('specs/circular-extended/definitions/animals.yaml'),
-        parsedSchema.animals
-      )
+        parsedSchema.animals,
+      ),
     );
 
     it('should dereference successfully', async function () {
@@ -233,10 +233,10 @@ describe('Schema with circular $refs that extend each other', function () {
 
       // Reference equality
       expect(schema.definitions.parent.properties.children.items.properties).to.equal(
-        schema.definitions.child.properties
+        schema.definitions.child.properties,
       );
       expect(schema.definitions.child.properties.parents.items.properties).to.equal(
-        schema.definitions.parent.properties
+        schema.definitions.parent.properties,
       );
       expect(schema.definitions.child.properties.pet.properties).to.equal(schema.definitions.pet.properties);
     });
@@ -268,7 +268,7 @@ describe('Schema with circular $refs that extend each other', function () {
         expect(err).to.be.an.instanceOf(ReferenceError);
         expect(err.message).to.contain('Circular $ref pointer found at ');
         expect(err.message).to.contain(
-          'specs/circular-extended/definitions/child-with-parents.yaml#/properties/parents/items'
+          'specs/circular-extended/definitions/child-with-parents.yaml#/properties/parents/items',
         );
 
         // $Refs.circular should be true
@@ -320,14 +320,14 @@ describe('Schema with circular $refs that extend each other', function () {
         path.abs('specs/circular-extended/definitions/pet.yaml'),
         parsedSchema.pet,
         path.abs('specs/circular-extended/definitions/animals.yaml'),
-        parsedSchema.animals
-      )
+        parsedSchema.animals,
+      ),
     );
 
     it('should dereference successfully', async function () {
       const parser = new $RefParser();
       const schema = await parser.dereference(
-        path.rel('specs/circular-extended/circular-extended-indirect-ancestor.yaml')
+        path.rel('specs/circular-extended/circular-extended-indirect-ancestor.yaml'),
       );
       expect(schema).to.equal(parser.schema);
       expect(schema).to.deep.equal(dereferencedSchema.indirectAncestor.fullyDereferenced);
@@ -340,7 +340,7 @@ describe('Schema with circular $refs that extend each other', function () {
       // Reference equality
       expect(schema.definitions.parent.properties.child.properties).to.equal(schema.definitions.child.properties);
       expect(schema.definitions.child.properties.children.items.properties).to.equal(
-        schema.definitions.child.properties
+        schema.definitions.child.properties,
       );
       expect(schema.definitions.pet.properties).to.equal(schema.definitions.child.properties.pet.properties);
     });
@@ -349,7 +349,7 @@ describe('Schema with circular $refs that extend each other', function () {
       const parser = new $RefParser();
       const schema = await parser.dereference(
         path.rel('specs/circular-extended/circular-extended-indirect-ancestor.yaml'),
-        { dereference: { circular: 'ignore' } }
+        { dereference: { circular: 'ignore' } },
       );
       expect(schema).to.equal(parser.schema);
       expect(schema).to.deep.equal(dereferencedSchema.indirectAncestor.ignoreCircular$Refs);

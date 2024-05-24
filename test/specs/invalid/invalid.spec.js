@@ -106,7 +106,7 @@ describe('Invalid syntax', function () {
               name: ParserError.name,
               message: message =>
                 message.includes(
-                  'invalid.yaml: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line (1:1)'
+                  'invalid.yaml: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line (1:1)',
                 ),
               path: [],
               source: message => message.endsWith('test/specs/invalid/invalid.yaml'),
@@ -207,7 +207,7 @@ describe('Invalid syntax', function () {
           { foo: { $ref: path.rel('specs/invalid/invalid.json') } },
           {
             parse: { yaml: false },
-          }
+          },
         );
         helper.shouldNotGetCalled();
       } catch (err) {
@@ -222,7 +222,7 @@ describe('Invalid syntax', function () {
         { foo: { $ref: path.rel('specs/invalid/invalid.yaml') } },
         {
           parse: { yaml: false, json: false },
-        }
+        },
       );
 
       // Because the JSON and YAML parsers were disabled, the invalid YAML file got parsed as plain text
@@ -257,7 +257,7 @@ describe('Invalid syntax', function () {
           const parser = new $RefParser();
           await parser.dereference(
             { foo: { $ref: path.rel('specs/invalid/invalid.yaml') } },
-            { continueOnError: true }
+            { continueOnError: true },
           );
           helper.shouldNotGetCalled();
         } catch (err) {
@@ -269,7 +269,7 @@ describe('Invalid syntax', function () {
               name: ParserError.name,
               message: message =>
                 message.includes(
-                  'invalid.yaml: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line (1:1)'
+                  'invalid.yaml: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line (1:1)',
                 ),
               path: ['foo'],
               source: message => message.endsWith('/test/') || message.startsWith('http://localhost'),
@@ -283,7 +283,7 @@ describe('Invalid syntax', function () {
           const parser = new $RefParser();
           await parser.dereference(
             { foo: { $ref: path.rel('specs/invalid/invalid.json') } },
-            { continueOnError: true }
+            { continueOnError: true },
           );
           helper.shouldNotGetCalled();
         } catch (err) {
@@ -307,7 +307,7 @@ describe('Invalid syntax', function () {
           const parser = new $RefParser();
           await parser.dereference(
             { foo: { $ref: path.rel('specs/invalid/invalid.json') } },
-            { continueOnError: true, parse: { yaml: false } }
+            { continueOnError: true, parse: { yaml: false } },
           );
           helper.shouldNotGetCalled();
         } catch (err) {
@@ -335,7 +335,7 @@ describe('Invalid syntax', function () {
         const parser = new $RefParser();
         const result = await parser.dereference(
           { foo: { $ref: path.rel('specs/invalid/invalid.yaml') } },
-          { continueOnError: true, parse: { yaml: false, json: false } }
+          { continueOnError: true, parse: { yaml: false, json: false } },
         );
         expect(result).to.deep.equal({ foo: ':\n' });
       });

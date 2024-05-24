@@ -25,14 +25,14 @@ describe('File names with special characters', function () {
       path.abs('specs/__({[ % & $ # @ ` ~ ,)}]__/__({[ % & $ # @ ` ~ ,)}]__.yaml'),
       parsedSchema.schema,
       path.abs('specs/__({[ % & $ # @ ` ~ ,)}]__/__({[ % & $ # @ ` ~ ,)}]__/__({[ % & $ # @ ` ~ ,)}]__.json'),
-      parsedSchema.file
-    )
+      parsedSchema.file,
+    ),
   );
 
   it('should dereference successfully', async function () {
     const parser = new $RefParser();
     const schema = await parser.dereference(
-      path.rel('specs/__({[ % & $ # @ ` ~ ,)}]__/__({[ % & $ # @ ` ~ ,)}]__.yaml')
+      path.rel('specs/__({[ % & $ # @ ` ~ ,)}]__/__({[ % & $ # @ ` ~ ,)}]__.yaml'),
     );
     expect(schema).to.equal(parser.schema);
     expect(schema).to.deep.equal(dereferencedSchema);

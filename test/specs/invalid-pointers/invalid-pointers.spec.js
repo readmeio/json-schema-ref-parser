@@ -39,7 +39,7 @@ describe('Schema with invalid pointers', function () {
       expect(err).to.be.instanceof(JSONParserErrorGroup);
       expect(err.files).to.equal(parser);
       expect(err.message).to.equal(
-        `1 error occurred while reading '${path.abs('specs/invalid-pointers/invalid.json')}'`
+        `1 error occurred while reading '${path.abs('specs/invalid-pointers/invalid.json')}'`,
       );
       expect(err.errors).to.containSubset([
         {

@@ -2,4 +2,3 @@ internal1:
   $ref: '#/internal2'
 internal2:
   $ref: '#/external'
-

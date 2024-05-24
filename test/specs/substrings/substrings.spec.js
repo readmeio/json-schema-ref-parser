@@ -26,8 +26,8 @@ describe('$refs that are substrings of each other', function () {
       path.abs('specs/substrings/definitions/definitions.json'),
       parsedSchema.definitions,
       path.abs('specs/substrings/definitions/strings.yaml'),
-      parsedSchema.strings
-    )
+      parsedSchema.strings,
+    ),
   );
 
   it('should dereference successfully', async function () {

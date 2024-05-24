@@ -64,7 +64,7 @@ describe('Schema with deeply-nested circular $refs', () => {
       await parser.dereference(path.rel('specs/deep-circular/deep-circular.yaml'), {
         dereference: { circular: false },
       });
-      assert.fail()
+      assert.fail();
     } catch (err) {
       // A ReferenceError should have been thrown
       expect(err).to.be.an.instanceOf(ReferenceError);

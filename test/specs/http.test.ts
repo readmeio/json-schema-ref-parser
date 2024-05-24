@@ -41,7 +41,8 @@ describe('HTTP options', () => {
 
   // 2020-07-08 - The HTTPBin redirect endpoints are suddenly returning 404 errors. Not sure why 🤷‍♂️
   // TODO: Re-enable these tests once HTTPBin is working again
-  describe.skip('http.redirect', { timeout: 30000}, () => {
+  // eslint-disable-next-line vitest/no-disabled-tests
+  describe.skip('http.redirect', { timeout: 30000 }, () => {
     it('should follow 5 redirects by default', async () => {
       const parser = new $RefParser();
 

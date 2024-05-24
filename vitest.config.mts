@@ -8,7 +8,7 @@ export default defineConfig({
       '**/node_modules/**',
 
       // Vitest doesn't support directories with special characters in them.
-      '**/__\\(\\{\\[\\ %\\ \\&\\ \\$\\ \\#\\ @\\ \\`\\ \\~\\ ,\\)\\}\\]__/**',
+      '**/special-characters/**',
 
       // This test is better served by native TS typings. Ignoring until we have those.
       '**/typescript-definition.spec.ts',

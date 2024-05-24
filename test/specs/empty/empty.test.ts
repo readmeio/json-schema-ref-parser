@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { describe, it, expect, assert } from 'vitest';
 
 import $RefParser from '../../../lib';

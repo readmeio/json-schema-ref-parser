@@ -48,8 +48,8 @@ JSON Schema $Ref Parser comes with built-in JSON, YAML, plain-text, and binary p
 |`text.encoding`|`string`   |The encoding to use when parsing text-based files. The default is "utf8".
 <!-- prettier-ignore-end -->
 
-`resolve` Options
--------------------
+## `resolve` Options
+
 The `resolve` options control how JSON Schema $Ref Parser will resolve file paths and URLs, and how those files will be read/downloaded.
 
 JSON Schema $Ref Parser comes with built-in support for HTTP and HTTPS, as well as support for local files (when running in Node.js). You can configure or disable either of these built-in resolvers. You can also add [your own custom resolvers](plugins/resolvers.md) if you want.
@@ -67,8 +67,8 @@ JSON Schema $Ref Parser comes with built-in support for HTTP and HTTPS, as well 
 |`http.withCredentials`|`boolean`|Set this to `true` if you're downloading files from a CORS-enabled server that requires authentication
 <!-- prettier-ignore-end -->
 
-`dereference` Options
--------------------
+## `dereference` Options
+
 The `dereference` options control how JSON Schema $Ref Parser will dereference `$ref` pointers within the JSON schema.
 
 <!-- prettier-ignore-start -->

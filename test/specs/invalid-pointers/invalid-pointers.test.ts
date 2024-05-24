@@ -1,7 +1,7 @@
 import { describe, it, expect, assert } from 'vitest';
 
 import $RefParser from '../../../lib';
-import { JSONParserErrorGroup, InvalidPointerError } from '../../../lib/util/errors';
+import { InvalidPointerError } from '../../../lib/util/errors';
 import path from '../../utils/path';
 
 describe('Schema with invalid pointers', () => {

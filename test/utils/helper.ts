@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 import { host } from '@jsdevtools/host-environment';
 import { expect } from 'chai';

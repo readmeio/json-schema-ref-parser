@@ -27,27 +27,29 @@
       // remove this.
       "files": ["lib/index.d.ts"],
       "rules": {
-        // "@typescript-eslint/consistent-indexed-object-style": "off",
-        // "@typescript-eslint/consistent-type-imports": "off",
-        // "@typescript-eslint/no-explicit-any": "off",
-        // "@typescript-eslint/sort-type-constituents": "off",
-        // "eslint-comments/no-unused-disable": "off",
-        // "lines-between-class-members": "off",
-        // "max-classes-per-file": "off",
-        // "quotes": "off",
-        // "typescript-sort-keys/interface": "off"
+        "@typescript-eslint/array-type": "off",
+        "@typescript-eslint/consistent-indexed-object-style": "off",
+        "@typescript-eslint/consistent-type-imports": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/sort-type-constituents": "off",
+        "eslint-comments/no-unused-disable": "off",
+        "lines-between-class-members": "off",
+        "max-classes-per-file": "off",
+        "typescript-sort-keys/interface": "off",
+        "unicorn/custom-error-definition": "off"
       }
     },
     {
       // These can all get removed when the library is moved over to native TS.
       "files": ["*.js"],
       "rules": {
-        // "@typescript-eslint/no-this-alias": "off",
-        // "@typescript-eslint/no-unused-vars": "off",
-        // "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-shadow": "off",
+        "@typescript-eslint/no-this-alias": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-use-before-define": "off",
         "@typescript-eslint/no-var-requires": "off",
-        // "eslint-comments/no-unused-disable": "off",
-        // "func-names": "off"
+        "func-names": "off",
+        "no-unused-expressions": "off"
       }
     }
   ],

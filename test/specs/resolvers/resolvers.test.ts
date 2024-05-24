@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { describe, it, expect, assert } from 'vitest';
 
 import $RefParser from '../../..';
@@ -68,22 +69,20 @@ describe('options.resolve', function () {
     expect(schema).to.deep.equal(dereferencedSchema);
   });
 
-  if (typeof Promise === 'function') {
-    it('should use a custom resolver that returns a promise', async function () {
-      const schema = await $RefParser.dereference(path.abs('specs/resolvers/resolvers.yaml'), {
-        resolve: {
-          // A custom resolver for "foo://" URLs
-          foo: {
-            canRead: /^foo:\/\//i,
-            read(_file) {
-              return Promise.resolve({ bar: { baz: 'hello world' } });
-            },
+  it('should use a custom resolver that returns a promise', async function () {
+    const schema = await $RefParser.dereference(path.abs('specs/resolvers/resolvers.yaml'), {
+      resolve: {
+        // A custom resolver for "foo://" URLs
+        foo: {
+          canRead: /^foo:\/\//i,
+          read(_file) {
+            return Promise.resolve({ bar: { baz: 'hello world' } });
           },
         },
-      });
-      expect(schema).to.deep.equal(dereferencedSchema);
+      },
     });
-  }
+    expect(schema).to.deep.equal(dereferencedSchema);
+  });
 
   it('should continue resolving if a custom resolver fails', async function () {
     const schema = await $RefParser.dereference(path.abs('specs/resolvers/resolvers.yaml'), {

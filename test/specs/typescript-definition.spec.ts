@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable vitest/require-hook */
+/* eslint-disable vitest/consistent-test-filename */
 import * as assert from 'assert';
+
 import * as $RefParser from '../../lib';
 
 const baseUrl = 'http://example.com/schema';
@@ -10,7 +14,7 @@ const promiseReject = (_: Error) => undefined;
 const callback = (_err: Error | null, _schema?: object) => undefined;
 
 // $RefParser class instance
-let parser = new $RefParser();
+const parser = new $RefParser();
 
 // $RefParser instance properties
 assert(parser.$refs.circular === true);

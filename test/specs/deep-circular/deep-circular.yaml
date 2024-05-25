@@ -207,7 +207,7 @@ properties:
                                                                                                                       name:
                                                                                                                         $ref: definitions/name.yaml
                                                                                                                       level30:
-                                                                                                                        $ref: "#"
+                                                                                                                        $ref: '#'
 definitions:
   name:
     $ref: definitions/name.yaml

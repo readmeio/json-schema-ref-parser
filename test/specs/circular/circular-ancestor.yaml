@@ -7,7 +7,7 @@ definitions:
       pet:
         $ref: '#/definitions/pet'
       spouse:
-        $ref: "#/definitions/person"       # <--- circular reference to ancestor
+        $ref: '#/definitions/person' # <--- circular reference to ancestor
       age:
         type: number
 

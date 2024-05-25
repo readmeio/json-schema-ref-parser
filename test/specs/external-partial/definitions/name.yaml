@@ -10,13 +10,13 @@ properties:
     $ref: ./required-string.yaml
   middle:
     type:
-      $ref: "definitions.json#/name/properties/first/type"
+      $ref: 'definitions.json#/name/properties/first/type'
     minLength:
-      $ref: "definitions.json#/name/properties/first/minLength"
+      $ref: 'definitions.json#/name/properties/first/minLength'
   prefix:
-    $ref: "../definitions/definitions.json#/name/properties/last"
+    $ref: '../definitions/definitions.json#/name/properties/last'
     minLength: 3
   suffix:
     type: string
-    $ref: "definitions.json#/name/properties/prefix"
+    $ref: 'definitions.json#/name/properties/prefix'
     maxLength: 3

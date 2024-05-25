@@ -4,9 +4,9 @@ required:
   - name
 properties:
   name:
-    $ref: "#/definitions/name"
+    $ref: '#/definitions/name'
   secretName:
-    $ref: "#/definitions/name"
+    $ref: '#/definitions/name'
     description: "Someone's secret name"
 definitions:
   name:

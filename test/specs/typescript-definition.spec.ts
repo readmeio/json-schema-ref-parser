@@ -1,24 +1,25 @@
-import * as assert from "assert";
-import * as $RefParser from "../../lib";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable vitest/require-hook */
+/* eslint-disable vitest/consistent-test-filename */
+import * as assert from 'assert';
 
-const baseUrl = "http://example.com/schema";
-const schemaPath = "my-schema.json";
-const schemaObject: $RefParser.JSONSchema = { title: "my-schema" };
+import * as $RefParser from '../../lib';
+
+const baseUrl = 'http://example.com/schema';
+const schemaPath = 'my-schema.json';
+const schemaObject: $RefParser.JSONSchema = { title: 'my-schema' };
 const options = {};
 const promiseResolve = (_: object) => undefined;
 const promiseReject = (_: Error) => undefined;
 const callback = (_err: Error | null, _schema?: object) => undefined;
 
-
 // $RefParser class instance
-let parser = new $RefParser();
-
+const parser = new $RefParser();
 
 // $RefParser instance properties
 assert(parser.$refs.circular === true);
 assert(Array.isArray(parser.$refs.circularRefs));
-assert(parser.schema.type === "object");
-
+assert(parser.schema.type === 'object');
 
 // $RefParser instance methods (with callbacks)
 parser.bundle(schemaPath, callback);
@@ -49,7 +50,6 @@ parser.resolve(schemaObject, options, callback);
 parser.resolve(baseUrl, schemaPath, options, callback);
 parser.resolve(baseUrl, schemaObject, options, callback);
 
-
 // $RefParser instance methods (with Promises)
 parser.bundle(schemaPath).then(promiseResolve, promiseReject);
 parser.bundle(schemaObject).then(promiseResolve, promiseReject);
@@ -79,7 +79,6 @@ parser.resolve(schemaObject, options).then(promiseResolve, promiseReject);
 parser.resolve(baseUrl, schemaPath, options).then(promiseResolve, promiseReject);
 parser.resolve(baseUrl, schemaObject, options).then(promiseResolve, promiseReject);
 
-
 // $RefParser static methods (with callbacks)
 $RefParser.bundle(schemaPath, callback);
 $RefParser.bundle(schemaObject, callback);
@@ -108,7 +107,6 @@ $RefParser.resolve(schemaPath, options, callback);
 $RefParser.resolve(schemaObject, options, callback);
 $RefParser.resolve(baseUrl, schemaPath, options, callback);
 $RefParser.resolve(baseUrl, schemaObject, options, callback);
-
 
 // $RefParser static methods (with Promises)
 $RefParser.bundle(schemaPath).then(promiseResolve, promiseReject);

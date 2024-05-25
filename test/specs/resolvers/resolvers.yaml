@@ -4,7 +4,7 @@ required:
   - name
 properties:
   name:
-    $ref: "#/definitions/name"
+    $ref: '#/definitions/name'
   age:
     type: integer
     minimum: 0
@@ -24,7 +24,7 @@ definitions:
         type: string
         minLength: 1
       last:
-        $ref: "#/definitions/name/properties/first"
+        $ref: '#/definitions/name/properties/first'
   foo:
     $ref: foo://bar.baz
   pet:

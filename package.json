@@ -54,7 +54,7 @@
   "devDependencies": {
     "@jsdevtools/host-environment": "^2.1.2",
     "@readme/eslint-config": "^14.0.0",
-    "@types/node": "^20.3.3",
+    "@types/node": "^22.0.2",
     "@vitest/coverage-v8": "^1.6.0",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",

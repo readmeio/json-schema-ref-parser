@@ -56,7 +56,7 @@
     "@readme/eslint-config": "^14.0.0",
     "@types/node": "^22.0.2",
     "@vitest/coverage-v8": "^2.0.5",
-    "eslint": "^8.57.0",
+    "eslint": "^9.16.0",
     "prettier": "^3.2.5",
     "typescript": "^5.1.6",
     "vitest": "^2.0.5"
